@@ -1,26 +1,19 @@
 import { Injectable } from '@nestjs/common';
-import { CreateQrcodeDto } from './dto/create-qrcode.dto';
-import { UpdateQrcodeDto } from './dto/update-qrcode.dto';
+import { GenerateQrcodeDto } from './dto/create-qrcode.dto';
+import * as qrcode from 'qrcode';
 
 @Injectable()
 export class QrcodeService {
-  create(createQrcodeDto: CreateQrcodeDto) {
-    return 'This action adds a new qrcode';
-  }
+  async create() {
+    const createQrcodeDto = new GenerateQrcodeDto();
+    createQrcodeDto.url = `${process.env.QRCODE_URL}`;
+    console.log(`${process.env.QRCODE_URL}`);
 
-  findAll() {
-    return `This action returns all qrcode`;
-  }
-
-  findOne(id: number) {
-    return `This action returns a #${id} qrcode`;
-  }
-
-  update(id: number, updateQrcodeDto: UpdateQrcodeDto) {
-    return `This action updates a #${id} qrcode`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} qrcode`;
+    try {
+      const res = await qrcode.toDataURL(createQrcodeDto.url);
+      return res;
+    } catch (error) {
+      return error.message;
+    }
   }
 }

@@ -1,42 +1,22 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Patch,
-  Param,
-  Delete,
-} from '@nestjs/common';
+import { GenerateQrcodeResponseDto } from './dto/create-qrcode.dto';
+import { Controller, Get } from '@nestjs/common';
 import { QrcodeService } from './qrcode.service';
-import { CreateQrcodeDto } from './dto/create-qrcode.dto';
-import { UpdateQrcodeDto } from './dto/update-qrcode.dto';
 
-@Controller('qrcode')
+@Controller('api/qrcode')
 export class QrcodeController {
   constructor(private readonly qrcodeService: QrcodeService) { }
 
-  @Post()
-  create(@Body() createQrcodeDto: CreateQrcodeDto) {
-    return this.qrcodeService.create(createQrcodeDto);
-  }
-
   @Get()
-  findAll() {
-    return this.qrcodeService.findAll();
-  }
-
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.qrcodeService.findOne(+id);
-  }
-
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateQrcodeDto: UpdateQrcodeDto) {
-    return this.qrcodeService.update(+id, updateQrcodeDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.qrcodeService.remove(+id);
+  async create() {
+    const code = new GenerateQrcodeResponseDto();
+    code.message = 'QR Code Generated Successfully';
+    try {
+      const res = await this.qrcodeService.create();
+      code.response = res;
+    } catch (error) {
+      code.message = 'Error Generating QR Code';
+      code.response = error.message;
+    }
+    return code;
   }
 }

@@ -12,7 +12,7 @@ export class GenerateQrcodeResponseDto {
   @ApiProperty()
   @IsString()
   @IsNotEmpty()
-  response: string;
+  data: string;
 
   @ApiProperty()
   @IsString()

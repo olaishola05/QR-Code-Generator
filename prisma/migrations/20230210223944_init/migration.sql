@@ -1,0 +1,30 @@
+-- CreateTable
+CREATE TABLE "Movie" (
+    "id" SERIAL NOT NULL,
+    "ComingSoon" BOOLEAN,
+    "Title" TEXT NOT NULL,
+    "Year" TEXT NOT NULL,
+    "Genre" TEXT NOT NULL,
+    "Director" TEXT NOT NULL,
+    "Actors" TEXT NOT NULL,
+    "Plot" TEXT NOT NULL,
+    "Poster" TEXT NOT NULL,
+    "imdbRating" TEXT NOT NULL,
+    "imdbVotes" TEXT NOT NULL,
+    "imdbID" TEXT NOT NULL,
+    "Type" TEXT NOT NULL,
+    "Ratings" TEXT NOT NULL,
+    "Metascore" TEXT NOT NULL,
+    "Response" TEXT NOT NULL,
+    "Runtime" TEXT NOT NULL,
+    "Country" TEXT NOT NULL,
+    "Language" TEXT NOT NULL,
+    "Awards" TEXT NOT NULL,
+    "Rated" TEXT NOT NULL,
+    "totalSeasons" TEXT,
+    "Released" TEXT NOT NULL,
+    "Writer" TEXT NOT NULL,
+    "Images" TEXT[],
+
+    CONSTRAINT "Movie_pkey" PRIMARY KEY ("id")
+);

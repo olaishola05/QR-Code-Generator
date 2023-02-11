@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { CreateMovieDto } from './dto/create-movie.dto';
-import { movies } from '../../utils/dummyData';
 import { PrismaService } from '../prisma/prisma.service';
 
 @Injectable()
@@ -17,7 +16,7 @@ export class MoviesService {
   async findAll() {
     const movies = await this.prisma.movie.findMany();
     const randomMovies = [];
-    const getRandomMovie = (movies) => {
+    const getRandomMovie = (movies: string | any[]) => {
       const randomMovie = movies[Math.floor(Math.random() * movies.length)];
       if (randomMovies.length === 10) {
         return;

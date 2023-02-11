@@ -29,9 +29,6 @@ export class MoviesService {
     };
 
     getRandomMovie(movies);
-    return {
-      status: 'success',
-      movies: randomMovies,
-    };
+    return randomMovies;
   }
 }

@@ -9,7 +9,7 @@ export class QrcodeController {
   @Get()
   async create() {
     const createQrcodeDto = new GenerateQrcodeDto();
-    createQrcodeDto.url = `${process.env.CLIENT_URL}/movies}`;
+    createQrcodeDto.url = `${process.env.CLIENT_URL}/movies`;
     const code = new GenerateQrcodeResponseDto();
     code.message = 'QR Code Generated Successfully';
     try {

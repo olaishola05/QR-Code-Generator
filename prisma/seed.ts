@@ -3,7 +3,7 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 async function main() {
-  const createMovies = await prisma.movie.createMany({
+  const movies = await prisma.films.createMany({
     data: [
       {
         Title: 'Avatar',
@@ -507,14 +507,15 @@ async function main() {
       },
     ],
   });
-  console.log(createMovies);
-}
 
+  console.log(movies);
+}
 main()
-  .catch((err) => {
-    console.error(err);
-    process.exit(1);
-  })
-  .finally(async () => {
+  .then(async () => {
     await prisma.$disconnect();
+  })
+  .catch(async (e) => {
+    console.error(e);
+    await prisma.$disconnect();
+    process.exit(1);
   });

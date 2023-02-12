@@ -2,7 +2,7 @@ import { GenerateQrcodeResponseDto } from './dto/create-qrcode.dto';
 import { Controller, Get } from '@nestjs/common';
 import { QrcodeService } from './qrcode.service';
 import { GenerateQrcodeDto } from './dto/create-qrcode.dto';
-@Controller('qrcode')
+@Controller('api/qrcode')
 export class QrcodeController {
   constructor(private readonly qrcodeService: QrcodeService) { }
 

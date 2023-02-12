@@ -2,11 +2,3 @@
 'https://www.{default}/api':
   type: upstream
   upstream: 'app:http'
-
-'https://{default}/qrcode':
-  type: redirect
-  to: 'https://www.{default}/'
-
-'https://{default}/movies':
-  type: redirect
-  to: 'https://www.{default}/'

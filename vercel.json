@@ -1,5 +1,8 @@
 {
     "version": 2,
+    "env": {
+      "POSTGRES_URL": "@database_url"
+    },
     "builds": [
         {
             "src": "src/main.ts",

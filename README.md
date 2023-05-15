@@ -8,7 +8,7 @@ Additional description about the project and its features.
 
 - [Live link here](https://qr-code-generator-netman5.vercel.app/)
 
-The Frontend can be found here [FE](https://github.com/netman5/QR-Scanner)
+The Frontend can be found here [FE](https://github.com/olaishola05/QR-Scanner)
 ## Built With
 
 - Major language
@@ -69,15 +69,15 @@ npm start
 
 👤 **Ola Ishola**
 
-- GitHub: [@netman5](https://github.com/netman5)
-- Twitter: [@Orlaish](https://twitter.com/Orlaish)
+- GitHub: [@olaishola05](https://github.com/olaishola05)
+- Twitter: [@olaishola05](https://twitter.com/olaishola05)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/ola-ishola/)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/netman5/QR-Code-Generator/issues).
+Feel free to check the [issues page](https://github.com/olaishola05/QR-Code-Generator/issues).
 
 ## Show your support
 
